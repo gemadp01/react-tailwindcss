@@ -1,8 +1,9 @@
-import { variant } from "../lib/utils";
+// import { variant } from "../lib/utils";
 
-const buttonStyle = variant(
-  "shadow-xl hover:shadow-none font-semibold rounded",
-  {
+import { cva } from "class-variance-authority";
+
+const buttonStyle = cva("shadow-xl hover:shadow-none font-semibold rounded", {
+  variants: {
     color: {
       primary: "bg-blue-500 hover:bg-blue-600 text-white shadow-blue-300",
       danger: "bg-red-500 hover:bg-red-600 text-white shadow-red-300",
@@ -19,8 +20,12 @@ const buttonStyle = variant(
       large: "py-3 px-6",
       xlarge: "py-4 px-8",
     },
-  }
-);
+  },
+  defaultVariants: {
+    color: "primary",
+    size: "medium",
+  },
+});
 
 // console.log(buttonStyle({ color: "primary", size: "small" }));
 function Button({ children, color = "primary", size = "medium", ...props }) {
@@ -28,7 +33,7 @@ function Button({ children, color = "primary", size = "medium", ...props }) {
   return (
     <button
       className={buttonStyle({ color, size, corner: "rounded" })}
-      {...props} // className="border border-black-500"
+      {...props}
     >
       {children}
     </button>
