@@ -1,6 +1,6 @@
 import { cn } from "../lib/utils";
 
-function Button({ children }) {
+function Button({ children, color }) {
   const colors = {
     primary: "bg-blue-500 hover:bg-blue-600 text-white shadow-blue-300",
     danger: "bg-red-500 hover:bg-red-600 text-white shadow-red-300",
@@ -20,12 +20,14 @@ function Button({ children }) {
         "shadow-xl hover:shadow-none",
         "font-semibold",
         "transition",
-        colors.primary
+        colors[color]
       )}
     >
       {children}
     </button>
   );
 }
-
+Button.defaultProps = {
+  color: "primary",
+};
 export default Button;
