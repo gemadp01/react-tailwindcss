@@ -23,9 +23,13 @@ const buttonStyle = variant(
 );
 
 // console.log(buttonStyle({ color: "primary", size: "small" }));
-function Button({ children, color = "primary", size = "medium" }) {
+function Button({ children, color = "primary", size = "medium", ...props }) {
+  console.log(props);
   return (
-    <button className={buttonStyle({ color, size, corner: "rounded" })}>
+    <button
+      className={buttonStyle({ color, size, corner: "rounded" })}
+      {...props} // className="border border-black-500"
+    >
       {children}
     </button>
   );
