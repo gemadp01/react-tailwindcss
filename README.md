@@ -1,3 +1,7 @@
+thanks to bang nauval
+- [cara nulis Tailwind di React yang baik dan belum tentu benar](https://www.youtube.com/watch?v=hwD7sEaWF0s&t=1917s)
+- [cara nulis Tailwind di React yang baik dan belum tentu benar](https://medium.com/kredibel/menulis-component-tailwind-di-react-yang-baik-dan-belum-tentu-benar-f69d706b9a4)
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
