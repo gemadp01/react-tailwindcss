@@ -1,6 +1,6 @@
 import { cn } from "../lib/utils";
 
-function buttonStyle(color, size) {
+function buttonStyle({ color, size }) {
   const base = "shadow-xl hover:shadow-none font-semibold rounded";
 
   const variants = {
@@ -26,7 +26,7 @@ function buttonStyle(color, size) {
 }
 
 function Button({ children, color, size }) {
-  return <button className={buttonStyle(color, size)}>{children}</button>;
+  return <button className={buttonStyle({ color, size })}>{children}</button>;
 }
 
 Button.defaultProps = {
