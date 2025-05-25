@@ -13,8 +13,6 @@ const buttonStyle = variant(
       light: "bg-white hover:bg-gray-100",
       dark: "bg-gray-800 hover:bg-gray-900",
     },
-  },
-  {
     size: {
       small: "py-1 px-2",
       medium: "py-2 px-4",
@@ -25,13 +23,12 @@ const buttonStyle = variant(
 );
 
 // console.log(buttonStyle({ color: "primary", size: "small" }));
-function Button({ children, color, size }) {
-  return <button className={buttonStyle({ color, size })}>{children}</button>;
+function Button({ children, color = "primary", size = "medium" }) {
+  return (
+    <button className={buttonStyle({ color, size, corner: "rounded" })}>
+      {children}
+    </button>
+  );
 }
-
-Button.defaultProps = {
-  color: "primary",
-  size: "medium",
-};
 
 export default Button;
